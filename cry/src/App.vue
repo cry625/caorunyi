@@ -4,7 +4,7 @@ import SideBar from "@/components/SideBar.vue"
 import { useRouter, useRoute } from "vue-router";
 const router = useRouter()
 const headerList = ref([
-  { name: '简历', path: '', id: 0 },
+  { name: '', path: '', id: 0,icon:"/public/icon/avatar.png" },
   { name: '简历', path: '/resume', id: 1 },
   { name: '知识库', path: '/resume', id: 2 },
   { name: '工具栏', path: '/resume', id: 3 },
@@ -20,7 +20,11 @@ function goLink(path){
     <!-- <SideBar/> -->
     <el-header style="height: 6vh;">
       <el-form :inline="true" class="demo-form-inline">
-        <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)"></el-form-item>
+        <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)">
+        <template #label>
+          <img :src="item.icon" alt="">
+        </template>
+        </el-form-item>
       </el-form>
     </el-header>
     <el-main>
