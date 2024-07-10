@@ -1,66 +1,47 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-const isAsideShow = ref(false);
-const handleMouseEnter = () => {
-  isAsideShow.value = true;
-};
-
-const handleMouseLeave = () => {
-  isAsideShow.value = false;
-};
-
-onMounted(() => {
-  // 监听鼠标移入/移出事件
-  document.querySelector('.aside-container').addEventListener('mouseenter', handleMouseEnter);
-});
-
-onBeforeUnmount(() => {
-  // 在组件销毁前移除事件监听
-  document.querySelector('.aside-container').removeEventListener('mouseenter', handleMouseEnter);
-});
+import SideBar from "@/components/SideBar.vue"
+import { useRouter, useRoute } from "vue-router";
+const router = useRouter()
+const headerList = ref([
+  { name: '简历', path: '', id: 0 },
+  { name: '简历', path: '/resume', id: 1 },
+  { name: '知识库', path: '/resume', id: 2 },
+  { name: '工具栏', path: '/resume', id: 3 },
+  { name: '经 验', path: '/resume', id: 4 },
+])
+function goLink(path){
+  router.push({ path: path})
+}
 </script>
 
 <template>
-  <el-container>
-    <el-aside
-      width="200px"
-      class="aside-container"
-      :class="{ 'aside-show': isAsideShow }"
-      @mouseleave="handleMouseLeave"
-    >Aside</el-aside>
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>
-        <RouterView />
-      </el-main>
-    </el-container>
+  <el-container style="height: 100vh;">
+    <!-- <SideBar/> -->
+    <el-header style="height: 6vh;">
+      <el-form :inline="true" class="demo-form-inline">
+        <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)"></el-form-item>
+      </el-form>
+    </el-header>
+    <el-main>
+      <RouterView />
+    </el-main>
   </el-container>
 </template>
 
 <style scoped>
-.aside-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #f5f5f5;
-  transition: width 0.3s ease-in-out;
-  overflow-x: hidden;
+.el-header {
+  background: #74b9ff;
 }
 
-.aside-show {
-  width: 200px;
-  background: #fdcb6e;
-}
-.el-header{
-  background: #fefefe;
-}
-.aside-container:not(.aside-show) {
-  width: 0;
+.el-main {
+  padding: 0;
 }
 </style>
 <style>
 body {
   margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
