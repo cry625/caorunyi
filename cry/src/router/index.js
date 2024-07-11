@@ -16,17 +16,17 @@ const router = createRouter({
     },
     {
       path: '/knowledge',
-      name: 'resume',
+      name: 'knowledge',
       component: () => import('../views/Knowledge.vue')
     },
     {
       path: '/tools',
-      name: 'resume',
+      name: 'tools',
       component: () => import('../views/Tools.vue')
     },
     {
       path: '/workexp',
-      name: 'resume',
+      name: 'workexp',
       component: () => import('../views/WorkExp.vue')
     }
   ]
