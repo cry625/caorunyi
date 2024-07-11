@@ -5,7 +5,7 @@ import { useRouter, useRoute } from "vue-router";
 const router = useRouter()
 const headerList = ref([
   { name: '', path: '', id: 0, icon: "/icon/avatar.png", property: 'avatar' },
-  { name: '简历', path: '/resume', id: 1, property: 'text' },
+  { name: '简介', path: '/resume', id: 1, property: 'text' },
   { name: '知识库', path: '/knowledge', id: 2, property: 'text' },
   { name: '工具栏', path: '/tools', id: 3, property: 'text' },
   { name: '经 验', path: '/workexp', id: 4, property: 'text' },
