@@ -1,0 +1,44 @@
+{
+  "id": "4619265",
+  "name": "caorunyi",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21703620",
+      "name": "用户",
+      "font_class": "touxiang",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "19412290",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "28781034",
+      "name": "全球",
+      "font_class": "quanqiu",
+      "unicode": "e887",
+      "unicode_decimal": 59527
+    },
+    {
+      "icon_id": "29265290",
+      "name": "月亮",
+      "font_class": "yueliang",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "29265292",
+      "name": "晴",
+      "font_class": "qing",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    }
+  ]
+}

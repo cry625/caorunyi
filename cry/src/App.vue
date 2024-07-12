@@ -4,12 +4,12 @@ import SideBar from "@/components/SideBar.vue"
 import { useRouter, useRoute } from "vue-router";
 const router = useRouter()
 const headerList = ref([
-  { name: '', path: '', id: 0, icon: "/icon/avatar.png", property: 'avatar' },
-  { name: '简介', path: '/resume', id: 1, property: 'text' },
-  { name: '知识库', path: '/knowledge', id: 2, property: 'text' },
-  { name: '工具栏', path: '/tools', id: 3, property: 'text' },
-  { name: '经 验', path: '/workexp', id: 4, property: 'text' },
-  { name: '', path: '', id: 0, property: 'btn' },
+  { name: '', path: '', id: 0, icon: "/icon/avatar.png", type: 'avatar' },
+  { name: '简介', path: '/resume', id: 1, type: 'text' },
+  { name: '知识库', path: '/knowledge', id: 2, type: 'text' },
+  { name: '工具栏', path: '/tools', id: 3, type: 'text' },
+  { name: '经 验', path: '/workexp', id: 4, type: 'text' },
+  { name: '', path: '', id:5, type: 'btn' },
 ])
 function goLink(path) {
   router.push({ path: path })
@@ -23,8 +23,8 @@ function goLink(path) {
       <el-form :inline="true" class="demo-form-inline">
         <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)">
           <template #label>
-            <el-button icon="Avatar" v-if="item.property=='avatar'"></el-button>
-            <el-button icon="setting" v-if="item.property=='btn'"></el-button>
+            <el-button icon="Avatar" v-if="item.type=='avatar'"></el-button>
+            <el-button icon="setting" v-if="item.type=='btn'"></el-button>
           </template>
         </el-form-item>
       </el-form>

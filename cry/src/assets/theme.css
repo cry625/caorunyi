@@ -1,0 +1,111 @@
+/* 
+  配置规则：
+    1. 各主题配色变量名必须保持一致
+    2. 变量命名规则：
+      1) --primary: 主配色，通常用于多个页面；
+      2) --页面名：该页面适用配色；
+      3) --页面名-bg：页面背景图；
+      4) --页面名-ic：页面图标。
+*/
+
+/* 各页面container统一样式 */
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* 各列表页卡片统一样式 */
+.info-card {
+  width: 95%;
+  background: var(--primary-card-bg);
+  padding: var(--van-padding-sm);
+  margin: var(--van-padding-sm) auto;
+  border-radius: var(--van-radius-lg);
+}
+
+/* 全局改van 日历文字颜色，避免被body颜色覆盖 */
+.van-calendar__day{
+  color: var(--vt-c-black-mute);
+}
+
+:root {
+    --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
+    --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
+    --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
+    --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png'); 
+    --primary-text-blue: rgb(64, 145, 226);
+}
+
+:root:root {
+  --van-radius-lg: 0.3rem;
+  --van-search-content-background: rgb(233, 233, 233);
+  --van-dropdown-menu-background: var(--primary-background);
+  --van-dropdown-menu-title-text-color: var(--primary-text);
+  /* --van-cell-background: var(--primary-card-bg); */
+  /* --van-cell-text-color: var(--primary-text); */
+  --van-field-placeholder-text-color: rgb(167, 167, 167);
+  /* --van-cell-value-color: rgb(218, 218, 218); */
+  --van-uploader-border-radius: 0.2rem;
+  --van-steps-background:  var(--primary-card-bg);
+  --van-search-background: var(--primary-card-bg);
+
+  .van-step--horizontal .van-step__circle-container {
+    background-color:  var(--primary-card-bg);
+  }
+  .van-step--horizontal .van-step__title{
+    color: var(--primary-text);
+  }
+
+  .van-floating-bubble {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .van-search {
+    background-color:  transparent;
+  }
+
+  /* 实现overlay + loading居中显示 */
+  .van-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+/* 
+  深色主题配色 
+*/
+:root[theme="dark"] {
+    /* --primary-background: rgba(0, 55, 121, 1); */
+    --primary-background: rgb(22, 38, 57, 1);
+    /* 主要用于各页面字体 */
+    --primary-text: rgba(255, 255, 255, 0.75);
+    /* 主要用于各页面小标题 */
+    --primary-text2: rgba(255, 255, 255, 1);
+    
+    --primary-text3: rgba(255, 255, 255, 1);
+    /* 主要用于各页面卡片背景 */
+    --primary-card-bg: rgba(57, 70, 87, 1);
+    /* 主要用于房源相关页面box背景 */
+    --apart-box-bg: linear-gradient(180deg, #3dabeb 0%, #316dbb 100%);
+
+  }
+
+  
+  /* 
+    浅色主题配色 
+  */
+  :root[theme="light"] {
+    --primary-background: rgba(250, 250, 250, 1);
+    --primary-text: rgba(0, 0, 0, 0.65);
+    --primary-text2: rgba(0, 0, 0, 1);
+    --primary-text3: rgba(37, 145, 255, 1);
+    --primary-card-bg: rgba(229, 235, 241, 1);
+    --apart-box-bg: linear-gradient(180deg, #CEE3FF 0%, #EDF8FF 100%);
+
+}
+
