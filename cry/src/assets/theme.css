@@ -13,8 +13,13 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  flex-direction: column;
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
   overflow-x: hidden;
+  overflow-y: auto;
+}
+.container::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 
 /* 各列表页卡片统一样式 */

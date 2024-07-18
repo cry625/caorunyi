@@ -2,19 +2,39 @@
     <div class="container">
         <div class="title">{{ prop.titleName }}</div>
         <div class="content">
-            <prop.cardType />
+            <!-- <prop.cardType /> -->
+            <!-- <div v-if="prop.cardType == 'IconCard'">
+                <IconCard />
+            </div>
+            <div v-if="prop.cardType == 'TextCard'">
+                <TextCard />
+            </div>
+            <div v-if="prop.cardType == 'GalleryCard'">
+                <GalleryCard />
+            </div>
+            <div v-if="prop.cardType == 'ComplexCard'">
+                <ComplexCard />
+            </div> -->
+            <component :is="prop.cardType" v-bind="prop"/>
         </div>
     </div>
 </template>
 <script setup>
 import { ref } from 'vue'
+import IconCard from './Card/IconCard.vue';
 const prop = defineProps({
     titleName: String,
     cardType: String,
 })
 </script>
 <style lang="scss" scoped>
-.container {}
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
 
 .title {
     background: #74b9ff;
