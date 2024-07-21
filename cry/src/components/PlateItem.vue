@@ -37,12 +37,12 @@ const prop = defineProps({
 }
 
 .title {
-    background: #74b9ff;
+    background: var(--primary-theme-lightblue);
     height: 60px;
     line-height: 60px;
     font-size: 1rem;
     font-weight: 550;
-    color: #fff;
+    color: var(--primary-text);
     padding-left: 1.2rem;
     letter-spacing: 2px;
 }

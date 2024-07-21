@@ -7,41 +7,119 @@
       3) --页面名-bg：页面背景图；
       4) --页面名-ic：页面图标。
 */
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
 
 /* 各页面container统一样式 */
 .container {
   display: flex;
   width: 100vw;
   height: 100vh;
-  scrollbar-width: none; /* firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  flex-direction: column;
   overflow-x: hidden;
-  overflow-y: auto;
-}
-.container::-webkit-scrollbar {
-  display: none; /* Chrome Safari */
 }
 
-/* 各列表页卡片统一样式 */
-.info-card {
-  width: 95%;
-  background: var(--primary-card-bg);
-  padding: var(--van-padding-sm);
-  margin: var(--van-padding-sm) auto;
-  border-radius: var(--van-radius-lg);
+.container-bgcolor {
+  background: var(--primary-theme-skyblue);
 }
 
-/* 全局改van 日历文字颜色，避免被body颜色覆盖 */
-.van-calendar__day{
-  color: var(--vt-c-black-mute);
+/* 各页面head统一样式 */
+.head {
+  margin: auto 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.head-height {
+  height: 6%;
+}
+
+.header {
+  color: var(--primary-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.2rem;
+  height: 3.2rem;
+  background: var(--primary-theme-skyblue);
+
+}
+
+/* 各页面content统一样式 */
+.content {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  /* 隐藏默认的滚动条样式 */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Opera */
+}
+
+.content-height {
+  height: calc(100vh - 1.1rem);
+}
+
+/* 文字颜色 */
+.text-color {
+  color: var(--primary-text);
+}
+
+/* switch开关颜色定义 */
+.el-switch__core {
+  --el-switch-on-color: var(--primary-text);
+  --el-switch-off-color: var(--primary-text);
+}
+
+/* el-header app.vue中*/
+.el-header {
+  background: var(--primary-theme-blue);
+  height: auto;
+}
+
+.el-header .el-form {
+  text-align: center;
+}
+
+.el-header .el-form-item__label {
+  color: var(--primary-text);
+  font-weight: 550;
+  font-size: 1rem;
+}
+
+.el-header .el-form-item {
+  margin: 0.4rem 1.8rem;
+}
+
+.el-header .el-button {
+  background: transparent;
+  border: none;
+}
+
+.el-header .el-icon {
+  color: var(--primary-text);
+}
+
+.el-main {
+  padding: 0;
 }
 
 :root {
-    --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
-    --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
-    --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
-    --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png'); 
-    --primary-text-blue: rgb(64, 145, 226);
+  --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
+  --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
+  --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
+  --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png');
 }
 
 :root:root {
@@ -54,13 +132,14 @@
   --van-field-placeholder-text-color: rgb(167, 167, 167);
   /* --van-cell-value-color: rgb(218, 218, 218); */
   --van-uploader-border-radius: 0.2rem;
-  --van-steps-background:  var(--primary-card-bg);
+  --van-steps-background: var(--primary-card-bg);
   --van-search-background: var(--primary-card-bg);
 
   .van-step--horizontal .van-step__circle-container {
-    background-color:  var(--primary-card-bg);
+    background-color: var(--primary-card-bg);
   }
-  .van-step--horizontal .van-step__title{
+
+  .van-step--horizontal .van-step__title {
     color: var(--primary-text);
   }
 
@@ -69,7 +148,7 @@
   }
 
   .van-search {
-    background-color:  transparent;
+    background-color: transparent;
   }
 
   /* 实现overlay + loading居中显示 */
@@ -84,33 +163,73 @@
 /* 
   深色主题配色 
 */
-:root[theme="dark"] {
-    /* --primary-background: rgba(0, 55, 121, 1); */
-    --primary-background: rgb(22, 38, 57, 1);
-    /* 主要用于各页面字体 */
-    --primary-text: rgba(255, 255, 255, 0.75);
-    /* 主要用于各页面小标题 */
-    --primary-text2: rgba(255, 255, 255, 1);
-    
-    --primary-text3: rgba(255, 255, 255, 1);
-    /* 主要用于各页面卡片背景 */
-    --primary-card-bg: rgba(57, 70, 87, 1);
-    /* 主要用于房源相关页面box背景 */
-    --apart-box-bg: linear-gradient(180deg, #3dabeb 0%, #316dbb 100%);
+:root[theme="light"] {
+  /* 系统中主题蓝色 */
+  --primary-theme-blue: #0984e3;
+  --primary-theme-lightblue: #74b9ff;
+  --primay-theme-grey: #efefef;
+  /* 系统中常用的tag的颜色 */
+  --primary-tag-green: #00b894;
+  --primary-tag-red: #d63031;
+  --primary-tag-yellow: #fdcb6e;
+  --primary-tag-orange: #D77C28;
+  --primary-tag-lightorange: #FCF6EC;
+  --primary-tag-lightgreen: #ECF6F4;
+  /* 系统中背景颜色 */
+  --primay-bg-white: #fcfcfc;
+  --primay-bg-greywhite: #f1f1f1;
+  --primay-bg-blue: #F6FBFF;
+  --primay-bg-grey: #939393;
+  /* 系统中文字颜色 */
+  --primary-text: #f1f1f1;
+  --primary-text-skyblue: #007FFF;
+  --primary-text-blue: #3398FF;
+  --primary-text-greyblue: #4A7CAF;
+  --primary-text-black: #222222;
+  --primary-text-grey: #ccc;
+  /* 系统中图标颜色 */
+  --primary-icon-grey: #757575;
 
-  }
-
-  
-  /* 
-    浅色主题配色 
-  */
-  :root[theme="light"] {
-    --primary-background: rgba(250, 250, 250, 1);
-    --primary-text: rgba(0, 0, 0, 0.65);
-    --primary-text2: rgba(0, 0, 0, 1);
-    --primary-text3: rgba(37, 145, 255, 1);
-    --primary-card-bg: rgba(229, 235, 241, 1);
-    --apart-box-bg: linear-gradient(180deg, #CEE3FF 0%, #EDF8FF 100%);
-
+  --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
+  --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
+  --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
+  --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png');
 }
 
+
+/* 
+    浅色主题配色 
+  */
+:root[theme="dark"] {
+  /* 系统中主题蓝色 */
+  --primary-theme-blue: #2e2f33;
+  --primary-theme-lightblue: #72747a;
+  --primay-theme-grey: #efefef;
+  /* 系统中常用的tag的颜色 */
+  --primary-tag-green: #00b894;
+  --primary-tag-red: #d63031;
+  --primary-tag-yellow: #fdcb6e;
+  --primary-tag-orange: #D77C28;
+  --primary-tag-lightorange: #FCF6EC;
+  --primary-tag-lightgreen: #ECF6F4;
+  /* 系统中背景颜色 */
+  --primay-bg-white: #fcfcfc;
+  --primay-bg-greywhite: #f1f1f1;
+  --primay-bg-blue: #F6FBFF;
+  --primay-bg-grey: #939393;
+  /* 系统中文字颜色 */
+  --primary-text: #cfcfcf;
+  --primary-text-skyblue: #007FFF;
+  --primary-text-blue: #3398FF;
+  --primary-text-greyblue: #4A7CAF;
+  --primary-text-black: #222222;
+  --primary-text-grey: #ccc;
+  /* 系统中图标颜色 */
+  --primary-icon-grey: #757575;
+
+  --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
+  --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
+  --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
+  --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png');
+
+}
