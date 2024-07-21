@@ -2,6 +2,8 @@
 <div class="container">
   <div class="card-list">
     <PlateItem titleName="项目1" cardType="IconCard"/>
+    <PlateItem titleName="项目1" cardType="IconCard"/>
+    <PlateItem titleName="项目1" cardType="IconCard"/>
     <!-- <PlateItem titleName="项目2" />
     <PlateItem titleName="项目3" />
     <PlateItem titleName="项目4" /> -->

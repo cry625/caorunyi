@@ -81,7 +81,9 @@ body {
   --el-switch-on-color: var(--primary-text);
   --el-switch-off-color: var(--primary-text);
 }
-
+.el-switch__core i{
+  color: #ffcc00;
+}
 /* el-header app.vue中*/
 .el-header {
   background: var(--primary-theme-blue);
@@ -167,21 +169,23 @@ body {
   /* 系统中主题蓝色 */
   --primary-theme-blue: #0984e3;
   --primary-theme-lightblue: #74b9ff;
+  --primary-theme-white:#fff;
   --primay-theme-grey: #efefef;
   /* 系统中常用的tag的颜色 */
   --primary-tag-green: #00b894;
   --primary-tag-red: #d63031;
-  --primary-tag-yellow: #fdcb6e;
+  --primary-tag-yellow: #ffcc00;
   --primary-tag-orange: #D77C28;
   --primary-tag-lightorange: #FCF6EC;
   --primary-tag-lightgreen: #ECF6F4;
   /* 系统中背景颜色 */
-  --primay-bg-white: #fcfcfc;
-  --primay-bg-greywhite: #f1f1f1;
-  --primay-bg-blue: #F6FBFF;
-  --primay-bg-grey: #939393;
+  --primary-bg-white: #fcfcfc;
+  --primary-bg-greywhite: #f1f1f1;
+
+  --grid-bg: #fcfcfc;
+  --grid-stripe: #3c0a1e0a;
   /* 系统中文字颜色 */
-  --primary-text: #f1f1f1;
+  --primary-text: #fafafa;
   --primary-text-skyblue: #007FFF;
   --primary-text-blue: #3398FF;
   --primary-text-greyblue: #4A7CAF;
@@ -202,23 +206,25 @@ body {
   */
 :root[theme="dark"] {
   /* 系统中主题蓝色 */
-  --primary-theme-blue: #2e2f33;
-  --primary-theme-lightblue: #72747a;
+  --primary-theme-blue: #151F30;
+  --primary-theme-lightblue: #2C3544;
+  --primary-theme-white:#5B626E;
   --primay-theme-grey: #efefef;
   /* 系统中常用的tag的颜色 */
   --primary-tag-green: #00b894;
   --primary-tag-red: #d63031;
-  --primary-tag-yellow: #fdcb6e;
+  --primary-tag-yellow: #ffcc00;
   --primary-tag-orange: #D77C28;
   --primary-tag-lightorange: #FCF6EC;
   --primary-tag-lightgreen: #ECF6F4;
   /* 系统中背景颜色 */
-  --primay-bg-white: #fcfcfc;
-  --primay-bg-greywhite: #f1f1f1;
-  --primay-bg-blue: #F6FBFF;
-  --primay-bg-grey: #939393;
+  --primary-bg-white: #fcfcfc;
+  --primary-bg-greywhite: #f1f1f1;
+
+  --grid-bg: #434B59ff;
+  --grid-stripe: #7278824f;
   /* 系统中文字颜色 */
-  --primary-text: #cfcfcf;
+  --primary-text: #e0e0e0;
   --primary-text-skyblue: #007FFF;
   --primary-text-blue: #3398FF;
   --primary-text-greyblue: #4A7CAF;

@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="PlateItem-container">
         <div class="title">{{ prop.titleName }}</div>
         <div class="content">
             <!-- <prop.cardType /> -->
-            <!-- <div v-if="prop.cardType == 'IconCard'">
-                <IconCard />
+            <div v-if="prop.cardType == 'IconCard'">
+                <IconCard title="技术栈"/>
             </div>
             <div v-if="prop.cardType == 'TextCard'">
                 <TextCard />
@@ -14,8 +14,7 @@
             </div>
             <div v-if="prop.cardType == 'ComplexCard'">
                 <ComplexCard />
-            </div> -->
-            <component :is="prop.cardType" v-bind="prop"/>
+            </div>
         </div>
     </div>
 </template>
@@ -28,10 +27,9 @@ const prop = defineProps({
 })
 </script>
 <style lang="scss" scoped>
-.container {
+.PlateItem-container {
     display: flex;
     width: 100vw;
-    height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
 }
@@ -49,9 +47,10 @@ const prop = defineProps({
 
 .content {
     width: 100%;
-    height: 300px;
-    background-image: linear-gradient(to right, rgba(60, 10, 30, 0.04) 1px, transparent 0),
-        linear-gradient(to bottom, rgba(60, 10, 30, 0.04) 1px, transparent 0);
-    background-size: 20px 20px;
+    height: 500px;
+    background-color: var(--grid-bg);
+    background-image: linear-gradient(to right, var(--grid-stripe) 1px, transparent 0),
+        linear-gradient(to bottom,var(--grid-stripe) 1px, transparent 0);
+    background-size: 26px 26px;
 }
 </style>

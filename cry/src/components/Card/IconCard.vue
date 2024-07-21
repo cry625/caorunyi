@@ -23,7 +23,17 @@ const iconList = ref([
   .com-container{
   width: 60%;
   height: 100%;
-  margin:0 auto;
+  margin:4% auto;
+  padding:1.2% 2% 3.2% 2%;
+  background: var(--primary-theme-white);
+  box-shadow: var(--primary-text-grey) 0 0 10px;
+  }
+  .title{
+    color:var(--primary-text-black);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+    padding: 10px 0;
   }
   .icon-group{
     display: flex;
