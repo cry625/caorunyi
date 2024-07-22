@@ -1,51 +1,33 @@
 <template>
-    <div class="com-container">
-        <div class="title">{{ prop.title }}</div>
-        <el-divider></el-divider>
-        <div class="icon-group">
-            <img :src="item.src" :alt="item.name" v-for="(item, key) in iconList" :key="key">
-        </div>
+  <div class="Card-container">
+    <div class="Card-title">{{ prop.title }}</div>
+    <el-divider></el-divider>
+    <div class="Card-icon-group">
+      <el-tooltip :content="item.name" v-for="(item, key) in iconList" :key="key" :effect="sysStore.theme">
+        <img :src="item.src" :alt="item.name" >
+      </el-tooltip>
     </div>
+  </div>
 </template>
 <script setup>
 import { defineProps } from 'vue'
 import { ref } from 'vue'
+import { useSysStore } from "@/stores/sys";
+const sysStore = useSysStore()
 const prop = defineProps({
-    title: String,
+  title: String,
 })
 const iconList = ref([
-    { id: 1, src: "/pic/html5.png", name: "html5" },
-    { id: 2, src: "/pic/css.png", name: "css" },
-    { id: 3, src: "/pic/js.png", name: "js" },
-  ])
-  </script>
-  <style lang="scss" scoped>
-  .com-container{
-  width: 60%;
-  height: 100%;
-  margin:4% auto;
-  padding:1.2% 2% 3.2% 2%;
-  background: var(--primary-theme-white);
-  box-shadow: var(--primary-text-grey) 0 0 10px;
-  }
-  .title{
-    color:var(--primary-text-black);
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 1;
-    padding: 10px 0;
-  }
-  .icon-group{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    img{
-        width: 60px;
-        height: 60px;
-    }
-}
-:deep(.el-divider--horizontal) {
-  margin: 10px 0;
-}
+  { id: 0, src: "/pic/vue.png", name: "vue" },
+  { id: 1, src: "/pic/js.png", name: "js" },
+  { id: 2, src: "/pic/css.png", name: "css" },
+  { id: 3, src: "/pic/html5.png", name: "html5" },
+  { id: 4, src: "/pic/vite.png", name: "vite" },
+  { id: 5, src: "/pic/pinia.png", name: "pinia" },
+  { id: 6, src: "/pic/elementPlus.png", name: "elementPlus" },
+  { id: 7, src: "/pic/vant.png", name: "vant"},
+])
+
+</script>
+<style lang="scss" scoped>
 </style>

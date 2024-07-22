@@ -35,11 +35,6 @@ function changeTheme() {
 function goLink(path) {
   router.push({ path: path })
 }
-
-if (sysStore.theme === 'dark') {
-  sysStore.setTheme('dark')
-}
-
 </script>
 
 <template>
@@ -47,7 +42,7 @@ if (sysStore.theme === 'dark') {
     <!-- <SideBar/> -->
     <el-header class="header">
       <i class="iconfont icon-touxiang"></i>
-      <el-form :inline="true" class="demo-form-inline">
+      <el-form :inline="true">
         <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)">
         </el-form-item>
       </el-form>
