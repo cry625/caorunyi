@@ -236,6 +236,8 @@ body {
   --primary-text-greyblue: #4A7CAF;
   --primary-text-black: #222222;
   --primary-text-grey: #ccc;
+  --primary-text-organe: #ff9200;
+  --primary-text-yellow:#ffbf00;
   /* 系统中图标颜色 */
   --primary-icon-grey: #757575;
 
@@ -271,10 +273,12 @@ body {
   /* 系统中文字颜色 */
   --primary-text: #e0e0e0;
   --primary-text-skyblue: #007FFF;
-  --primary-text-blue: #3398FF;
-  --primary-text-greyblue: #4A7CAF;
-  --primary-text-black: #222222;
+  --primary-text-blue: #7eacda;
+  --primary-text-greyblue: #8291a0;
+  --primary-text-black: #b6b6b6;
   --primary-text-grey: #ccc;
+  --primary-text-organe: #ca9754;
+  --primary-text-yellow:#d4bb6e;
   /* 系统中图标颜色 */
   --primary-icon-grey: #757575;
 
