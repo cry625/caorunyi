@@ -198,6 +198,7 @@ body {
 /* el组件自定义 */
 .el-divider--horizontal {
   margin: 10px 0;
+  border-top: 1px var(--primary-text-grey) var(--el-border-style);
   }
 
 :root {
@@ -234,7 +235,7 @@ body {
   --primary-text-skyblue: #007FFF;
   --primary-text-blue: #3398FF;
   --primary-text-greyblue: #4A7CAF;
-  --primary-text-black: #222222;
+  --primary-text-black: #343434;
   --primary-text-grey: #ccc;
   --primary-text-organe: #ff9200;
   --primary-text-yellow:#ffbf00;
@@ -275,8 +276,8 @@ body {
   --primary-text-skyblue: #007FFF;
   --primary-text-blue: #7eacda;
   --primary-text-greyblue: #8291a0;
-  --primary-text-black: #b6b6b6;
-  --primary-text-grey: #ccc;
+  --primary-text-black: #c4c4c4;
+  --primary-text-grey: #acacac;
   --primary-text-organe: #ca9754;
   --primary-text-yellow:#d4bb6e;
   /* 系统中图标颜色 */
