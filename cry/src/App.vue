@@ -11,7 +11,7 @@ const headerList = ref([
   { name: '简介', path: '/resume', id: 1, type: 'text' },
   { name: '知识库', path: '/knowledge', id: 2, type: 'text' },
   { name: '工具栏', path: '/tools', id: 3, type: 'text' },
-  { name: '经 验', path: '/workexp', id: 4, type: 'text' },
+  // { name: '经 验', path: '/workexp', id: 4, type: 'text' },
 ])
 const dropdownList = ref([
   { name: '中 文', id: 0, icon: 'icon-zhongwen' },
