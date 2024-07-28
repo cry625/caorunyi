@@ -4,13 +4,13 @@
         <div class="PlateItem-content">
             <!-- <prop.cardType /> -->
             <div v-if="prop.cardType == 'IconCard'">
-                <IconCard title="技术栈"/>
+                <IconCard />
             </div>
             <div v-if="prop.cardType == 'TextCard'">
-                <TextCard title="技术栈" :col="2"/>
+                <TextCard  :col="2"/>
             </div>
             <div v-if="prop.cardType == 'GalleryCard'">
-                <GalleryCard title="技术栈" :col="3"/>
+                <GalleryCard  :col="3"/>
             </div>
             <div v-if="prop.cardType == 'ComplexCard'">
                 <ComplexCard />

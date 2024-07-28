@@ -2,9 +2,9 @@
 <div class="container">
   <div class="content">
     <PlateItem titleName="技术栈" cardType="IconCard"/>
-    <PlateItem titleName="项目2" cardType="TextCard"/>
-    <PlateItem titleName="项目3" cardType="GalleryCard"/>
-    <!-- <PlateItem titleName="项目4" /> -->
+    <PlateItem titleName="获奖经历" cardType="TextCard"/>
+    <PlateItem titleName="项目经验" cardType="GalleryCard"/>
+    <PlateItem titleName="个人经历" cardType="ComplexCard"/>
   </div>
 </div>
 
