@@ -298,7 +298,29 @@ body {
 .galleryCard-padding {
   padding: 0 6% 8% 6%;
 }
-
+.galleryCard-padding .el-tag{
+  margin: 0.2rem 0.46rem 0.2rem 0;
+}
+.tag-orange {
+  font-weight: bold;
+  color: var(--primary-tag-orange); 
+  border-color: var(--primary-tag-orange); 
+  border: 2px solid;
+  background: transparent;
+}
+.tag-orange:hover {
+  background-color: var(--primary-tag-bg-orange); 
+}
+.tag-pink {
+  font-weight: bold;
+  color: var(--primary-tag-pink); 
+  border-color: var(--primary-tag-pink); 
+  border: 2px solid;
+  background: transparent;
+}
+.tag-pink:hover {
+  background-color: var(--primary-tag-bg-pink); 
+}
 /* el组件自定义 */
 .el-divider--horizontal {
   margin: 10px 0;

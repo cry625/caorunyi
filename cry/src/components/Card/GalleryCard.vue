@@ -7,9 +7,6 @@
             <div class="grid-img">
               <img src="/public/pic/caorunyi.png" alt="">
             </div>
-            <!-- <div class="flag">
-              <div class="text">{{ getPeriodName(item.period) }}</div>
-            </div> -->
             <el-divider></el-divider>
             <div class="grid-content galleryCard-padding">
               <div class="line-green line-flex">
@@ -50,56 +47,5 @@ const totalBlocks = ref([
 
 </script>
 <style lang="scss" scoped>
-.flag {
-  position: absolute;
-  right: 8px;
-  top: 0;
-  width: 56px;
-  background-color: var(--primary-text-green);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
 
-.text {
-  position: relative;
-  padding: 6px 4px;
-  text-align: center;
-  color: var(--primary-text);
-  font-size: 14px;
-}
-
-.text::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 22px;
-  border-width: 10px 28px;
-  border-color: var(--primary-text-green);
-  border-style: solid;
-  border-bottom: 12px solid transparent;
-}
-:deep(.el-tag){
-  margin: 0.2rem 0.46rem 0.2rem 0;
-}
-.tag-orange {
-  font-weight: bold;
-  color: var(--primary-tag-orange); 
-  border-color: var(--primary-tag-orange); 
-  border: 2px solid;
-  background: transparent;
-}
-.tag-orange:hover {
-  background-color: var(--primary-tag-bg-orange); 
-}
-.tag-pink {
-  font-weight: bold;
-  color: var(--primary-tag-pink); 
-  border-color: var(--primary-tag-pink); 
-  border: 2px solid;
-  background: transparent;
-}
-
-.tag-pink:hover {
-  background-color: var(--primary-tag-bg-pink); 
-}
 </style>
