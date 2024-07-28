@@ -125,6 +125,7 @@ body {
   -ms-overflow-style: none;
   /* IE and Edge */
 }
+
 .el-main::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, and Opera */
@@ -152,12 +153,13 @@ body {
 
 .PlateItem-content {
   width: 100%;
-  min-height: 480px;
+  min-height: 380px;
   background-color: var(--grid-bg);
   background-image: linear-gradient(to right, var(--grid-stripe) 1px, transparent 0),
-      linear-gradient(to bottom,var(--grid-stripe) 1px, transparent 0);
+    linear-gradient(to bottom, var(--grid-stripe) 1px, transparent 0);
   background-size: 26px 26px;
 }
+
 /* card-icon组件内的卡片样式 */
 .Card-container {
   width: 60%;
@@ -167,6 +169,7 @@ body {
   background: var(--primary-theme-white);
   box-shadow: var(--primary-text-grey) 0 0 10px;
 }
+
 .Card-title {
   color: var(--primary-text-black);
   font-weight: bold;
@@ -182,24 +185,125 @@ body {
   height: 100%;
 }
 
-.Card-icon-group img {
+.Card-container .Card-icon-group img {
   height: 10%;
   width: 10%;
   max-width: 60px;
   max-height: 60px;
 }
+
 /* textcard中的表格设置 */
-.grid-container{
+.grid-container {
   width: 80%;
   height: 100%;
   margin: 4% auto;
   padding: 1.8% 2% 3.8% 2%;
 }
+
+.grid-container .el-col {
+  display: flex;
+}
+
+.grid-block {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 60px;
+  background: var(--primary-theme-white);
+  box-shadow: var(--primary-text-grey) 0 0 10px;
+  position: relative;
+  width: 100%;
+}
+
+.subscript {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: var(--primary-text-skyblue);
+  color: var(--primary-text);
+  padding: 0.66rem 0.76rem 0.66rem 0.82rem;
+  border-bottom-left-radius: 1.6rem;
+  font-weight: bold;
+  font-size: 0.86rem;
+  box-shadow: var(--primary-text-grey) 0 0 4px;
+}
+
+.grid-title {
+  text-align: left;
+  color: var(--primary-text-blue);
+  font-weight: bold;
+  line-height: 1;
+  margin: auto 0;
+}
+
+.grid-content {
+  text-align: left;
+}
+
+.grid-content .line-brown {
+  color: var(--primary-text-yellow);
+  width: 100%;
+  line-height: 1.8;
+}
+
+.grid-content .line-black {
+  color: var(--primary-text-black);
+  word-wrap: break-word;
+  /* 强制换行 */
+  overflow-wrap: break-word;
+  /* 强制换行 */
+  line-height: 1.5;
+}
+
+/* gallerycard组件中在textcard基础上添加的 */
+.grid-content .line-green {
+  color: var(--primary-text-green);
+  width: 100%;
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+.grid-content .line-flex {
+  display: flex;
+}
+
+.grid-content .line-flex .line-flex-grow {
+  flex-grow: 1;
+}
+
+.galleryCard .el-divider--horizontal {
+  margin: 0 0 10px 0;
+}
+
+.grid-img {
+  width: 100%;
+  /* 确保 grid-img 的宽度为 100% */
+  overflow: hidden;
+  /* 隐藏超出部分 */
+}
+
+.grid-img img {
+  width: 100%;
+  /* 图片宽度为 100% */
+  min-height: 220px;
+  object-fit: cover;
+  /* 保持图片比例并填满容器 */
+}
+
+.galleryCard {
+  padding: 0;
+}
+
+.galleryCard-padding {
+  padding: 0 6% 8% 6%;
+}
+
 /* el组件自定义 */
 .el-divider--horizontal {
   margin: 10px 0;
   border-top: 1px var(--primary-text-grey) var(--el-border-style);
-  }
+}
 
 :root {
   --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
@@ -222,6 +326,12 @@ body {
   --primary-tag-red: #d63031;
   --primary-tag-yellow: #ffcc00;
   --primary-tag-orange: #D77C28;
+  --primary-tag-bg-orange:#D77C281a;
+  --primary-tag-purple: #866ab9;
+  --primary-tag-bg-purple:#866ab91a;
+  --primary-tag-pink: #e0629d;
+  --primary-tag-bg-pink:#e0629d1a;
+
   --primary-tag-lightorange: #FCF6EC;
   --primary-tag-lightgreen: #ECF6F4;
   /* 系统中背景颜色 */
@@ -238,7 +348,8 @@ body {
   --primary-text-black: #343434;
   --primary-text-grey: #ccc;
   --primary-text-organe: #ff9200;
-  --primary-text-yellow:#ffbf00;
+  --primary-text-yellow: #ffbf00;
+  --primary-text-green: #2bad75;
   /* 系统中图标颜色 */
   --primary-icon-grey: #757575;
 
@@ -263,6 +374,9 @@ body {
   --primary-tag-red: #d63031;
   --primary-tag-yellow: #ffcc00;
   --primary-tag-orange: #D77C28;
+  --primary-tag-purple: #6f42c1;
+  --primary-tag-pink: #e83e8c;
+  
   --primary-tag-lightorange: #FCF6EC;
   --primary-tag-lightgreen: #ECF6F4;
   /* 系统中背景颜色 */
@@ -279,7 +393,8 @@ body {
   --primary-text-black: #c4c4c4;
   --primary-text-grey: #acacac;
   --primary-text-organe: #ca9754;
-  --primary-text-yellow:#d4bb6e;
+  --primary-text-yellow: #d4bb6e;
+  --primary-text-green: #2bad75;
   /* 系统中图标颜色 */
   --primary-icon-grey: #757575;
 

@@ -7,10 +7,10 @@
                 <IconCard title="技术栈"/>
             </div>
             <div v-if="prop.cardType == 'TextCard'">
-                <TextCard title="技术栈" col="2"/>
+                <TextCard title="技术栈" :col="2"/>
             </div>
             <div v-if="prop.cardType == 'GalleryCard'">
-                <GalleryCard />
+                <GalleryCard title="技术栈" :col="3"/>
             </div>
             <div v-if="prop.cardType == 'ComplexCard'">
                 <ComplexCard />
