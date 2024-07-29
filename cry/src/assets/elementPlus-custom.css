@@ -1,0 +1,62 @@
+/* 针对elementPlus的全局修改 */
+
+/* el-header app.vue中*/
+.el-header {
+  background: var(--primary-theme-blue);
+  height: auto;
+}
+
+.el-header .el-form {
+  text-align: center;
+}
+
+.el-header .el-form-item__label {
+  color: var(--primary-text);
+  font-weight: 550;
+  font-size: 1.2rem;
+}
+
+.el-header .el-form-item {
+  margin: 0.68rem 1.8rem;
+}
+
+.el-header .el-button {
+  background: transparent;
+  border: none;
+}
+
+.el-header .el-icon {
+  color: var(--primary-text);
+}
+
+.el-main {
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* 隐藏默认的滚动条样式 */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.el-main::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Opera */
+}
+
+/* divider组件上下边距10px,自定义颜色 */
+.el-divider--horizontal {
+  margin: 10px 0;
+  border-top: 1px var(--primary-text-grey) var(--el-border-style);
+}
+
+/* switch开关颜色定义 */
+.el-switch__core {
+  --el-switch-on-color: var(--primary-text);
+  --el-switch-off-color: var(--primary-text);
+}
+
+.el-switch__core i {
+  color: var(--primary-tag-yellow);
+}

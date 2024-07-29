@@ -1,3 +1,4 @@
+/* 系统主题配色 */
 /* 
   配置规则：
     1. 各主题配色变量名必须保持一致
@@ -7,335 +8,16 @@
       3) --页面名-bg：页面背景图；
       4) --页面名-ic：页面图标。
 */
-body {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-}
 
-/* 各页面container统一样式 */
-.container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  flex-direction: column;
-  overflow-x: hidden;
-}
 
-.container-bgcolor {
-  background: var(--primary-theme-skyblue);
-}
 
-/* 各页面head统一样式 */
-.head {
-  margin: auto 0.4rem;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-}
 
-.head-height {
-  height: 6%;
-}
 
-.header {
-  color: var(--primary-text);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.2rem;
-  height: 3.2rem;
-  background: var(--primary-theme-skyblue);
 
-}
 
-/* 各页面content统一样式 */
-.content {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  /* 隐藏默认的滚动条样式 */
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* IE and Edge */
-}
-
-.content::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari, and Opera */
-}
-
-.content-height {
-  height: calc(100vh - 1.1rem);
-}
-
-/* 文字颜色 */
-.text-color {
-  color: var(--primary-text);
-}
-
-/* switch开关颜色定义 */
-.el-switch__core {
-  --el-switch-on-color: var(--primary-text);
-  --el-switch-off-color: var(--primary-text);
-}
-
-.el-switch__core i {
-  color: #ffcc00;
-}
-
-/* el-header app.vue中*/
-.el-header {
-  background: var(--primary-theme-blue);
-  height: auto;
-}
-
-.el-header .el-form {
-  text-align: center;
-}
-
-.el-header .el-form-item__label {
-  color: var(--primary-text);
-  font-weight: 550;
-  font-size: 1.2rem;
-}
-
-.el-header .el-form-item {
-  margin: 0.68rem 1.8rem;
-}
-
-.el-header .el-button {
-  background: transparent;
-  border: none;
-}
-
-.el-header .el-icon {
-  color: var(--primary-text);
-}
-
-.el-main {
-  padding: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  /* 隐藏默认的滚动条样式 */
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* IE and Edge */
-}
-
-.el-main::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari, and Opera */
-}
-
-/* 组件内 */
-/* plateItem组件 */
-.PlateItem-container {
-  display: flex;
-  width: 100vw;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-.PlateItem-title {
-  background: var(--primary-theme-lightblue);
-  height: 72px;
-  line-height: 72px;
-  font-size: 1.4rem;
-  font-weight: 550;
-  color: var(--primary-text);
-  padding-left: 1.2rem;
-  letter-spacing: 2px;
-}
-
-.PlateItem-content {
-  width: 100%;
-  min-height: 380px;
-  background-color: var(--grid-bg);
-  background-image: linear-gradient(to right, var(--grid-stripe) 1px, transparent 0),
-    linear-gradient(to bottom, var(--grid-stripe) 1px, transparent 0);
-  background-size: 26px 26px;
-}
-
-/* card-icon组件内的卡片样式 */
-.Card-container {
-  width: 60%;
-  height: 100%;
-  margin: 4% auto;
-  padding: 1.8% 2% 3.8% 2%;
-  background: var(--primary-theme-white);
-  box-shadow: var(--primary-text-grey) 0 0 10px;
-}
-
-.Card-title {
-  color: var(--primary-text-black);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1;
-  padding: 0.76rem 0;
-}
-
-.Card-icon-group {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-}
-
-.Card-container .Card-icon-group img {
-  height: 10%;
-  width: 10%;
-  max-width: 60px;
-  max-height: 60px;
-}
-
-/* textcard中的表格设置 */
-.grid-container {
-  width: 80%;
-  height: 100%;
-  margin: 4% auto;
-  padding: 1.8% 2% 3.8% 2%;
-}
-
-.grid-container .el-col {
-  display: flex;
-}
-
-.grid-block {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
-  border-radius: 4px;
-  margin-bottom: 60px;
-  background: var(--primary-theme-white);
-  box-shadow: var(--primary-text-grey) 0 0 10px;
-  position: relative;
-  width: 100%;
-}
-
-.subscript {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: var(--primary-text-skyblue);
-  color: var(--primary-text);
-  padding: 0.66rem 0.76rem 0.66rem 0.82rem;
-  border-bottom-left-radius: 1.6rem;
-  font-weight: bold;
-  font-size: 0.86rem;
-  box-shadow: var(--primary-text-grey) 0 0 4px;
-}
-
-.grid-title {
-  text-align: left;
-  color: var(--primary-text-blue);
-  font-weight: bold;
-  line-height: 1;
-  margin: auto 0;
-}
-
-.grid-content {
-  text-align: left;
-}
-
-.grid-content .line-brown {
-  color: var(--primary-text-yellow);
-  width: 100%;
-  line-height: 1.8;
-}
-
-.grid-content .line-black {
-  color: var(--primary-text-black);
-  word-wrap: break-word;
-  /* 强制换行 */
-  overflow-wrap: break-word;
-  /* 强制换行 */
-  line-height: 1.5;
-}
-
-/* gallerycard组件中在textcard基础上添加的 */
-.grid-content .line-green {
-  color: var(--primary-text-green);
-  width: 100%;
-  line-height: 1.8;
-  font-size: 1.2rem;
-}
-
-.grid-content .line-flex {
-  display: flex;
-}
-
-.grid-content .line-flex .line-flex-grow {
-  flex-grow: 1;
-}
-
-.galleryCard .el-divider--horizontal {
-  margin: 0 0 10px 0;
-}
-
-.grid-img {
-  width: 100%;
-  /* 确保 grid-img 的宽度为 100% */
-  overflow: hidden;
-  /* 隐藏超出部分 */
-}
-
-.grid-img img {
-  width: 100%;
-  /* 图片宽度为 100% */
-  min-height: 220px;
-  object-fit: cover;
-  /* 保持图片比例并填满容器 */
-}
-
-.galleryCard {
-  padding: 0;
-}
-
-.galleryCard-padding {
-  padding: 0 6% 8% 6%;
-}
-.galleryCard-padding .el-tag{
-  margin: 0.2rem 0.46rem 0.2rem 0;
-}
-.tag-orange {
-  font-weight: bold;
-  color: var(--primary-tag-orange); 
-  border-color: var(--primary-tag-orange); 
-  border: 2px solid;
-  background: transparent;
-}
-.tag-orange:hover {
-  background-color: var(--primary-tag-bg-orange); 
-}
-.tag-pink {
-  font-weight: bold;
-  color: var(--primary-tag-pink); 
-  border-color: var(--primary-tag-pink); 
-  border: 2px solid;
-  background: transparent;
-}
-.tag-pink:hover {
-  background-color: var(--primary-tag-bg-pink); 
-}
-/* el组件自定义 */
-.el-divider--horizontal {
-  margin: 10px 0;
-  border-top: 1px var(--primary-text-grey) var(--el-border-style);
-}
-
-:root {
-  --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
-  --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
-  --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
-  --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png');
-}
 
 /* 
-  深色主题配色 
+  浅色主题配色 
 */
 :root[theme="light"] {
   /* 系统中主题蓝色 */
@@ -348,11 +30,11 @@ body {
   --primary-tag-red: #d63031;
   --primary-tag-yellow: #ffcc00;
   --primary-tag-orange: #D77C28;
-  --primary-tag-bg-orange:#D77C281a;
+  --primary-tag-bg-orange: #D77C281a;
   --primary-tag-purple: #866ab9;
-  --primary-tag-bg-purple:#866ab91a;
+  --primary-tag-bg-purple: #866ab91a;
   --primary-tag-pink: #e0629d;
-  --primary-tag-bg-pink:#e0629d1a;
+  --primary-tag-bg-pink: #e0629d1a;
 
   --primary-tag-lightorange: #FCF6EC;
   --primary-tag-lightgreen: #ECF6F4;
@@ -381,9 +63,54 @@ body {
   --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png');
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 系统中主题蓝色 */
+    --primary-theme-blue: #0984e3;
+    --primary-theme-lightblue: #74b9ff;
+    --primary-theme-white: #fff;
+    --primay-theme-grey: #efefef;
+    /* 系统中常用的tag的颜色 */
+    --primary-tag-green: #00b894;
+    --primary-tag-red: #d63031;
+    --primary-tag-yellow: #ffcc00;
+    --primary-tag-orange: #D77C28;
+    --primary-tag-bg-orange: #D77C281a;
+    --primary-tag-purple: #866ab9;
+    --primary-tag-bg-purple: #866ab91a;
+    --primary-tag-pink: #e0629d;
+    --primary-tag-bg-pink: #e0629d1a;
+
+    --primary-tag-lightorange: #FCF6EC;
+    --primary-tag-lightgreen: #ECF6F4;
+    /* 系统中背景颜色 */
+    --primary-bg-white: #fcfcfc;
+    --primary-bg-greywhite: #f1f1f1;
+
+    --grid-bg: #fcfcfc;
+    --grid-stripe: #3c0a1e0a;
+    /* 系统中文字颜色 */
+    --primary-text: #fafafa;
+    --primary-text-skyblue: #1687f8;
+    --primary-text-blue: #3398FF;
+    --primary-text-greyblue: #4A7CAF;
+    --primary-text-black: #343434;
+    --primary-text-grey: #ccc;
+    --primary-text-organe: #ff9200;
+    --primary-text-yellow: #ffbf00;
+    --primary-text-green: #2bad75;
+    /* 系统中图标颜色 */
+    --primary-icon-grey: #757575;
+
+    --footer-ic-home-active: url('/icon/footer/ic_home_active@3x.png');
+    --footer-ic-hotel-active: url('/icon/footer/ic_hotel_active@3x.png');
+    --footer-ic-property-active: url('/icon/footer/ic_property_active@3x.png');
+    --footer-ic-my-info-active: url('/icon/footer/ic_my_info_active@3x.png');
+  }
+}
 
 /* 
-    浅色主题配色 
+    深色主题配色 
   */
 :root[theme="dark"] {
   /* 系统中主题蓝色 */
@@ -398,7 +125,7 @@ body {
   --primary-tag-orange: #D77C28;
   --primary-tag-purple: #6f42c1;
   --primary-tag-pink: #e83e8c;
-  
+
   --primary-tag-lightorange: #FCF6EC;
   --primary-tag-lightgreen: #ECF6F4;
   /* 系统中背景颜色 */
