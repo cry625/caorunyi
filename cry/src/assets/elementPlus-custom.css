@@ -3,7 +3,7 @@
 /* el-header app.vue中*/
 .el-header {
   background: var(--primary-theme-blue);
-  height: auto;
+  height: 3.2rem;
 }
 
 .el-header .el-form {
@@ -59,4 +59,15 @@
 
 .el-switch__core i {
   color: var(--primary-tag-yellow);
+}
+
+@media screen and (max-width: 640px) {
+  .mobile-dontShow{
+    display: none;
+  } 
+}
+@media screen and (min-width: 900px) {
+  .pc-dontShow{
+    display: none;
+  } 
 }

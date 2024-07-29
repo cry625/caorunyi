@@ -11,7 +11,7 @@
             <div class="grid-content galleryCard-padding">
               <div class="line-green line-flex">
                 <div class="line-flex-grow">{{ item.title }}</div>
-                <i class="iconfont icon-gengduo1"></i>
+                <i class="iconfont icon-gengduo"></i>
               </div>
               <div class="tag-group">
                 <el-tag :class="{'tag-orange':get_color_with_id(id)=='var(--primary-tag-orange)','tag-pink':get_color_with_id(id)=='var(--primary-tag-pink)'}" effect="plain" v-for="id in item.label">{{ get_label_with_id(id) }}</el-tag>

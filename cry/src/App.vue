@@ -17,6 +17,7 @@ const dropdownList = ref([
   { name: '中 文', id: 0, icon: 'icon-zhongwen' },
   { name: 'English', id: 1, icon: 'icon-yingwen' },
 ])
+const showMenu=ref(false)
 const showLight = ref(true)
 const theme = ref('')
 watch(() => showLight.value, changeTheme)
@@ -42,12 +43,15 @@ function goLink(path) {
     <!-- <SideBar/> -->
     <el-header class="header">
       <i class="iconfont icon-touxiang"></i>
-      <el-form :inline="true">
+      <el-form :inline="true" class="mobile-dontShow">
         <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)">
         </el-form-item>
       </el-form>
       <div class="tool-bar">
-        <div class="dropdown">
+        <div class="mr-right pc-dontShow">
+          <i class="iconfont icon-gengduo1 text-color" @click="showMenu"></i>
+        </div>
+        <div class="mr-right">
           <el-dropdown>
             <span class="el-dropdown-link">
               <i class="iconfont icon-quanqiu text-color"></i>
@@ -84,7 +88,7 @@ function goLink(path) {
 .tool-bar {
   display: flex;
 }
-.dropdown{
+.mr-right{
   margin: auto 0.8rem auto 0;
   line-height: 1;
 }
