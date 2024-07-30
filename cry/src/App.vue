@@ -6,12 +6,11 @@ import { useSysStore } from "@/stores/sys";
 import { ElMessage } from 'element-plus/es';
 const router = useRouter()
 const sysStore = useSysStore()
-window.document.documentElement.setAttribute('theme', sysStore.theme)
 const headerList = ref([
   { name: '简介', path: '/resume', id: 1, type: 'text' },
   { name: '知识库', path: '/knowledge', id: 2, type: 'text' },
   { name: '工具栏', path: '/tools', id: 3, type: 'text' },
-  { name: '经 验', path: '/workexp', id: 4, type: 'text' },
+  // { name: '经 验', path: '/workexp', id: 4, type: 'text' },
 ])
 const dropdownList = ref([
   { name: '中 文', id: 0, icon: 'icon-zhongwen' },
@@ -19,20 +18,61 @@ const dropdownList = ref([
 ])
 const showMenu=ref(false)
 const showLight = ref(true)
-const theme = ref('')
-watch(() => showLight.value, changeTheme)
+
+// const theme = ref('')
+// watch(() => showLight.value, changeTheme)
+// window.document.documentElement.setAttribute('theme', sysStore.theme)
+// function changeTheme() {
+//   theme.value = window.document.documentElement.getAttribute('theme')
+//   let nowThemeText = theme.value == 'dark' ? '深色' : '浅色'
+//   let newThemeText = nowThemeText == '深色' ? '浅色' : '深色'
+//   ElMessage({
+//     message: '当前主题为' + nowThemeText + ',切换主题为' + newThemeText,
+//     type: 'success'
+//   })
+//   let newTheme = theme.value == 'dark' ? 'light' : 'dark'
+//   window.document.documentElement.setAttribute('theme', newTheme)
+//   sysStore.setTheme(newTheme)
+// }
+const theme = ref('');
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+function setTheme(theme) {
+  window.document.documentElement.setAttribute('theme', theme);
+  sysStore.setTheme(theme);
+}
+
 function changeTheme() {
-  theme.value = window.document.documentElement.getAttribute('theme')
-  let nowThemeText = theme.value == 'dark' ? '深色' : '浅色'
-  let newThemeText = nowThemeText == '深色' ? '浅色' : '深色'
+  theme.value = window.document.documentElement.getAttribute('theme');
+  let nowThemeText = theme.value === 'dark' ? '深色' : '浅色';
+  let newThemeText = nowThemeText === '深色' ? '浅色' : '深色';
   ElMessage({
     message: '当前主题为' + nowThemeText + ',切换主题为' + newThemeText,
     type: 'success'
-  })
-  let newTheme = theme.value == 'dark' ? 'light' : 'dark'
-  window.document.documentElement.setAttribute('theme', newTheme)
-  sysStore.setTheme(newTheme)
+  });
+  let newTheme = theme.value === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
 }
+// 初始化主题
+if (sysStore.theme) {
+  setTheme(sysStore.theme);
+} else {
+  setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
+}
+
+// 监听系统颜色模式变化
+prefersDarkScheme.addEventListener('change', (e) => {
+  const newTheme = e.matches ? 'dark' : 'light';
+  // 仅在用户未手动设置主题时自动切换
+  if (theme.value !== 'dark' && theme.value !== 'light') {
+    setTheme(newTheme);
+  }
+});
+
+// 手动控制主题切换
+watch(() => showLight.value, changeTheme);
+
+
 function goLink(path) {
   router.push({ path: path })
 }
