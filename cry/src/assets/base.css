@@ -264,3 +264,17 @@ body {
 .tag-pink:hover {
   background-color: var(--primary-tag-bg-pink);
 }
+
+/* complexcard的样式，在card-icon组件下 */
+.Card-detail {
+  color: var(--primary-text-black);
+  font-size: 1rem;
+  line-height: 1;
+}
+.block-display{
+  display: block;
+}
+.italic-font{
+  font-style: italic;
+  color: var(--primary-text-blue);
+}
