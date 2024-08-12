@@ -4,6 +4,10 @@
       <div v-if="activeTab === 'tab1'">这是第一个选项卡的内容。</div>
       <div v-if="activeTab === 'tab2'">这是第二个选项卡的内容。</div>
       <div v-if="activeTab === 'tab3'">这是第三个选项卡的内容。</div>
+      <div v-if="activeTab === 'tab4'">这是第四个选项卡的内容。</div>
+      <div v-if="activeTab === 'tab5'">这是第五个选项卡的内容。</div>
+      <div v-if="activeTab === 'tab6'">这是第六个选项卡的内容。</div>
+      <iframe src="https://www.zomoplan.com/web/list" width="1000" height="600"></iframe>
     </template>
   </Tabs>
 </template>
@@ -12,11 +16,13 @@
 import Tabs from '@/components/Tabs.vue';
 
 const tabs = [
-  { name: 'tab1', label: '选项卡 1' },
-  { name: 'tab2', label: '选项卡 2' },
-  { name: 'tab3', label: '选项卡 3' },
-  { name: 'tab4', label: '选项卡 4' },
-  { name: 'tab5', label: '选项卡 5' },
-  { name: 'tab6', label: '选项卡 6' }
+  { name: '1', label: '日历' },
+  { name: '2', label: '便笺' },
+  { name: '3', label: '删除文中所有注释的工具' },
+  { name: '4', label: '解析json文件的工具' },
+  { name: '5', label: '单词翻译' },
+  { name: '6', label: '注销console.log' },
+  { name: '7', label: '注销console.log' },
 ];
+
 </script>
