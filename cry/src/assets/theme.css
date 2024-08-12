@@ -35,7 +35,8 @@
     /* 系统中背景颜色 */
     --primary-bg-white: #fcfcfc;
     --primary-bg-greywhite: #f1f1f1;
-  
+    --primary-bg-tag-white:#fcfcfc;
+    --primary-grid-bg-white:#fcfcfc;
     --grid-bg: #fcfcfc;
     --grid-stripe: #3c0a1e0a;
     /* 系统中文字颜色 */
@@ -77,7 +78,8 @@
   /* 系统中背景颜色 */
   --primary-bg-white: #fcfcfc;
   --primary-bg-greywhite: #f1f1f1;
-
+  --primary-bg-tag-white:#fcfcfc;
+  --primary-grid-bg-white:#fcfcfc;
   --grid-bg: #fcfcfc;
   --grid-stripe: #3c0a1e0a;
   /* 系统中文字颜色 */
@@ -116,7 +118,8 @@
     /* 系统中背景颜色 */
     --primary-bg-white: #fcfcfc;
     --primary-bg-greywhite: #f1f1f1;
-  
+    --primary-bg-tag-white:#5B626E;
+    --primary-grid-bg-white:#747d8c;
     --grid-bg: #434B59ff;
     --grid-stripe: #7278824f;
     /* 系统中文字颜色 */
@@ -157,7 +160,8 @@
   /* 系统中背景颜色 */
   --primary-bg-white: #fcfcfc;
   --primary-bg-greywhite: #f1f1f1;
-
+  --primary-bg-tag-white:#5B626E;
+  --primary-grid-bg-white:#747d8c;
   --grid-bg: #434B59ff;
   --grid-stripe: #7278824f;
   /* 系统中文字颜色 */
@@ -172,6 +176,4 @@
   --primary-text-green: #2bad75;
   /* 系统中图标颜色 */
   --primary-icon-grey: #757575;
-
-
 }

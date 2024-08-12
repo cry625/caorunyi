@@ -14,6 +14,9 @@ import Tabs from '@/components/Tabs.vue';
 const tabs = [
   { name: 'tab1', label: '选项卡 1' },
   { name: 'tab2', label: '选项卡 2' },
-  { name: 'tab3', label: '选项卡 3' }
+  { name: 'tab3', label: '选项卡 3' },
+  { name: 'tab4', label: '选项卡 4' },
+  { name: 'tab5', label: '选项卡 5' },
+  { name: 'tab6', label: '选项卡 6' }
 ];
 </script>

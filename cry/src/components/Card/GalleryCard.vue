@@ -14,7 +14,7 @@
                 <i class="iconfont icon-gengduo"></i>
               </div>
               <div class="tag-group">
-                <el-tag :class="{'tag-orange':get_color_with_id(id)=='var(--primary-tag-orange)','tag-pink':get_color_with_id(id)=='var(--primary-tag-pink)'}" effect="plain" v-for="id in item.label">{{ get_label_with_id(id) }}</el-tag>
+                <el-tag :class="{'tag-orange':get_color_with_id(id)=='var(--primary-tag-orange)','tag-pink':get_color_with_id(id)=='var(--primary-tag-pink)'}" effect="plain" v-for="(id,key) in item.label" :key="key">{{ get_label_with_id(id) }}</el-tag>
               </div>
               <div class="line-black">
                 {{ item.remark }}
