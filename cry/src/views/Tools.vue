@@ -1,15 +1,19 @@
 <template>
-  <Tabs :tabs="tabs">
+  <div class="container">
+    <Tabs :tabs="tabs">
     <template #default="{ activeTab }">
-      <div v-if="activeTab === 'tab1'">这是第一个选项卡的内容。</div>
-      <div v-if="activeTab === 'tab2'">这是第二个选项卡的内容。</div>
-      <div v-if="activeTab === 'tab3'">这是第三个选项卡的内容。</div>
-      <div v-if="activeTab === 'tab4'">这是第四个选项卡的内容。</div>
-      <div v-if="activeTab === 'tab5'">这是第五个选项卡的内容。</div>
-      <div v-if="activeTab === 'tab6'">这是第六个选项卡的内容。</div>
-      <iframe src="https://www.zomoplan.com/web/list" width="1000" height="600"></iframe>
+      <div v-if="activeTab === '1'">
+        <iframe src="https://www.zomoplan.com/web/list" class="windowSize"></iframe>
+      </div>
+      <div v-if="activeTab === '2'">这是第二个选项卡的内容。</div>
+      <div v-if="activeTab === '3'">这是第三个选项卡的内容。</div>
+      <div v-if="activeTab === '4'">这是第四个选项卡的内容。</div>
+      <div v-if="activeTab === '5'">这是第五个选项卡的内容。</div>
+      <div v-if="activeTab === '6'">这是第六个选项卡的内容。</div>
+
     </template>
   </Tabs>
+  </div>
 </template>
 
 <script setup>
@@ -26,3 +30,9 @@ const tabs = [
 ];
 
 </script>
+<style scoped>
+.windowSize{
+  width: 100%;
+  height: calc(100vh - 7.86rem);
+}
+</style>

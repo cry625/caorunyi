@@ -1,14 +1,17 @@
 <template>
     <div class="container">
-        <div class="tabs">
-            <div v-for="tab in tabsWithColors" :key="tab.name" class="tab" :class="{ active: activeTab === tab.name }"
-                :style="{ backgroundColor: tab.color, color: tab.fontcolor, borderBottomColor: activeTab === tab.name ? tab.darkencolor : tab.color, borderBottomWidth: activeTab === '2px', borderBottomStyle:'solid'}"
-                @click="selectTab(tab.name)">
-                {{ tab.label }}
+        <div class="content">
+            <div class="tabs">
+                <div class="tab" v-for="tab in tabsWithColors" :key="tab.name" 
+                    :class="{ active: activeTab === tab.name }"
+                    :style="{ backgroundColor: tab.color, color: tab.fontcolor, borderBottomColor: activeTab === tab.name ? tab.darkencolor : tab.color, borderBottomWidth: activeTab === '2px', borderBottomStyle: 'solid' }"
+                    @click="selectTab(tab.name)">
+                    {{ tab.label }}
+                </div>
             </div>
-        </div>
-        <div class="tab-content" :style="tabStyle">
-            <slot :activeTab="activeTab" />
+            <div class="tab-content" :style="tabStyle">
+                <slot :activeTab="activeTab" />
+            </div>
         </div>
     </div>
 </template>
@@ -53,13 +56,13 @@ const activeTab = ref(tabsWithColors.value[0].name);
 
 const tabStyle = computed(() => {
     // 将十六进制颜色转换为RGBA（这里我们假设alpha值为0.04）  
-    const rgbaColor = hexToRgba(darkenColor(selectedTabColor.value,50), 0.04);
+    const rgbaColor = hexToRgba(darkenColor(selectedTabColor.value, 50), 0.04);
 
     // 创建并返回样式对象  
     return {
         backgroundImage: `linear-gradient(to right, ${rgbaColor} 2px, transparent 0), linear-gradient(to bottom, ${rgbaColor} 2px, transparent 0)`,
         backgroundSize: '26px 26px',
-        backgroundColor:'var(--primary-grid-bg-white)'
+        backgroundColor: 'var(--primary-grid-bg-white)'
     };
 });
 // 辅助函数：将十六进制颜色转换为RGBA  
@@ -82,17 +85,30 @@ function hexToRgba(hex, alpha) {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  /* flex-direction: column; */
+  overflow-x: hidden;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.2rem);
+}
 .tabs {
     display: flex;
-    border-bottom: 1px solid #ccc;
-    padding-top: 4px;
-    padding-left: 14px;
+    border-bottom: 1px solid var(--primary-text-grey);
+    padding-top: 0.26rem;
+    padding-left: 0.8rem;
     background: var(--primary-theme-lightblue);
+    height: 2.4rem;
 }
 
 .tab {
-    height: 36px;
-    line-height: 36px;
+    height: 2.25rem;
+    line-height: 2.25rem;
     border-top-left-radius: 0.4rem;
     clip-path: polygon(0 100%, 100% 100%, 76% 0, 0% 0);
     cursor: pointer;
@@ -108,8 +124,7 @@ function hexToRgba(hex, alpha) {
 }
 
 .tab-content {
-    padding: 20px;
-    width: 100%;
-    height: 100%;
+    flex: 1;
+    padding: 0.78rem;
 }
 </style>
