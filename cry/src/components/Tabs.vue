@@ -107,16 +107,23 @@ function hexToRgba(hex, alpha) {
 }
 
 .tab {
-    height: 2.25rem;
+    height: 2rem;
     line-height: 2.25rem;
-    border-top-left-radius: 0.4rem;
-    clip-path: polygon(0 100%, 100% 100%, 76% 0, 0% 0);
     cursor: pointer;
     position: relative;
     margin: 0 4px;
-    padding-left: 1.2rem;
-    padding-right: 3rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
     color: var(--primary-text);
+    overflow: hidden;
+}
+
+.tab:first-child {
+    padding-left: 1rem;
+    clip-path: polygon(0 100%, 100% 100%, 88% 0, 0% 0);
+}
+.tab:not(:first-child) {
+    clip-path: polygon(0 100%, 100% 100%, 94% 0, 4% 0); 
 }
 
 .tab.active {
