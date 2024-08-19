@@ -1,0 +1,86 @@
+<template>
+    <div class="introduce">
+        <div class="introduce-title">
+            删除代码中所有注释语句
+        </div>
+        <div class="introduce-content">
+            将需要删除注释的代码片段放入代码编辑器中即可
+        </div>
+        <ScriptEditor v-model="editorValue" />
+    </div>
+    <div class="introduce">
+        <div class="introduce-content">
+            <span>以下是删除注释后的代码片段：</span>
+            <el-button size="large" @click="copyResult">
+                <template #icon>
+                    <i class="iconfont icon-fuzhi"></i>
+                </template>
+            </el-button>
+        </div>
+        <ScriptEditor v-model="resultValue" />
+    </div>
+</template>
+
+<script setup>
+import { ElMessage } from 'element-plus';
+import ScriptEditor from './scriptEditor.vue';
+import { ref, watch } from "vue";
+const editorValue = ref("")
+const resultValue = ref("")
+
+watch(() => editorValue.value, () => {
+    removeAnnot()
+})
+function removeAnnot() {
+  // 删除单行注释（// 开头的）
+  // 删除多行注释（/* ... */）
+  resultValue.value = editorValue.value
+    .replace(/\/\/.*$/gm, '') // 删除单行注释
+    .replace(/\/\*[\s\S]*?\*\//g, ''); // 删除多行注释
+}
+function copyResult() {
+    if (!resultValue.value) {
+        ElMessage({
+            message: '请先输入待修改的代码！',
+            type: 'warning',
+        });
+        return;
+    }
+    navigator.clipboard.writeText(resultValue.value)
+        .then(() => {
+            console.log('复制成功！');
+            ElMessage({
+                message: '复制成功！',
+                type: 'success',
+            })
+            // 你可以在这里添加一些用户反馈，比如弹出提示
+        })
+        .catch(err => {
+            ElMessage({
+                message: '复制失败！' + err,
+                type: 'error',
+            })
+        });
+}
+</script>
+
+<style scoped lang="scss">
+.introduce {
+    color: var(--primary-text-black);
+    padding: 0 1.6rem 1.2rem 1.6rem;
+}
+
+.introduce-title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 2.5;
+}
+
+.introduce-content {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+    color: var(--primary-bg-scripteditor);
+}
+</style>
