@@ -4,14 +4,19 @@
             删除代码中所有注释语句
         </div>
         <div class="introduce-content">
-            将需要删除注释的代码片段放入代码编辑器中即可
+            <span>将需要删除注释的代码片段放入代码编辑器中：</span>
+            <el-button color="var(--primary-theme-blue)" :dark="isDark" size="middle" @click="clearEditorValue">
+                <template #icon>
+                    <i class="iconfont icon-15qingkong-1"></i>
+                </template>
+            </el-button>
         </div>
         <ScriptEditor v-model="editorValue" />
     </div>
     <div class="introduce">
         <div class="introduce-content">
             <span>以下是删除注释后的代码片段：</span>
-            <el-button size="large" @click="copyResult">
+            <el-button color="var(--primary-theme-blue)" :dark="isDark"  size="middle" @click="copyResult">
                 <template #icon>
                     <i class="iconfont icon-fuzhi"></i>
                 </template>
@@ -32,11 +37,27 @@ watch(() => editorValue.value, () => {
     removeAnnot()
 })
 function removeAnnot() {
-  // 删除单行注释（// 开头的）
-  // 删除多行注释（/* ... */）
-  resultValue.value = editorValue.value
-    .replace(/\/\/.*$/gm, '') // 删除单行注释
-    .replace(/\/\*[\s\S]*?\*\//g, ''); // 删除多行注释
+    // 删除单行注释（// 开头的）
+    // 删除多行注释（/* ... */）
+    /* 这是
+    一个
+    多行 
+    注释*/
+    resultValue.value = editorValue.value
+        .replace(/\/\*(.|[\r\n])*?\*\//g, '')  // 去掉块注释
+        .replace(/\/\/.*$/gm, '')              // 去掉单行注释
+        .replace(/<!--(.|[\r\n])*?-->/g, '')  // 去掉 HTML 块注释
+        .replace(/^\s*[\r\n]/gm, '');          // 删除空行
+}
+function clearEditorValue(){
+    editorValue.value=''
+    if (!editorValue.value) {
+        ElMessage({
+            message: '已清空',
+            type: 'success',
+        });
+        return;
+    }
 }
 function copyResult() {
     if (!resultValue.value) {

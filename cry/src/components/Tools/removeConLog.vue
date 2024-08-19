@@ -4,14 +4,19 @@
       删除代码中存在的console.log语句
     </div>
     <div class="introduce-content">
-      将需要删除console.log语句的代码片段放入代码编辑器中即可
+      <span>将需要删除console.log语句的代码片段放入代码编辑器中：</span>
+      <el-button color="var(--primary-theme-blue)" :dark="isDark" size="middle" @click="clearEditorValue">
+        <template #icon>
+          <i class="iconfont icon-15qingkong-1"></i>
+        </template>
+      </el-button>
     </div>
     <ScriptEditor v-model="editorValue" />
   </div>
   <div class="introduce">
     <div class="introduce-content">
       <span>以下是删除console.log语句后的代码片段：</span>
-      <el-button size="large" @click="copyResult">
+      <el-button color="var(--primary-theme-blue)" :dark="isDark" size="middle" @click="copyResult">
         <template #icon>
           <i class="iconfont icon-fuzhi"></i>
         </template>
@@ -27,12 +32,21 @@ import ScriptEditor from './scriptEditor.vue';
 import { ref, watch } from "vue";
 const editorValue = ref("")
 const resultValue = ref("")
-
 watch(() => editorValue.value, () => {
   removeConLog()
 })
 function removeConLog() {
   resultValue.value = editorValue.value.replace(/console\.log\(.*?\);?/g, '');
+}
+function clearEditorValue(){
+    editorValue.value=''
+    if (!editorValue.value) {
+        ElMessage({
+            message: '已清空',
+            type: 'success',
+        });
+        return;
+    }
 }
 function copyResult() {
   if (!resultValue.value) {
