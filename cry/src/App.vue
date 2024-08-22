@@ -18,22 +18,6 @@ const dropdownList = ref([
 ])
 const showMenu=ref(false)
 const showLight = ref(true)
-
-// const theme = ref('')
-// watch(() => showLight.value, changeTheme)
-// window.document.documentElement.setAttribute('theme', sysStore.theme)
-// function changeTheme() {
-//   theme.value = window.document.documentElement.getAttribute('theme')
-//   let nowThemeText = theme.value == 'dark' ? '深色' : '浅色'
-//   let newThemeText = nowThemeText == '深色' ? '浅色' : '深色'
-//   ElMessage({
-//     message: '当前主题为' + nowThemeText + ',切换主题为' + newThemeText,
-//     type: 'success'
-//   })
-//   let newTheme = theme.value == 'dark' ? 'light' : 'dark'
-//   window.document.documentElement.setAttribute('theme', newTheme)
-//   sysStore.setTheme(newTheme)
-// }
 const theme = ref('');
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -71,7 +55,6 @@ prefersDarkScheme.addEventListener('change', (e) => {
 
 // 手动控制主题切换
 watch(() => showLight.value, changeTheme);
-
 
 function goLink(path) {
   router.push({ path: path })
