@@ -1,8 +1,14 @@
 <template>
   <div>
+    <h1>这是一个基于vue+vite+elementPlus的个人网站</h1>
+    <ul>以下介绍本网站中使用的技术统计
+      <li>简单描述网站内容</li>
+      <li>用饼图表示语言占比</li>
+      <li>用折线图表示代码提交记录</li>
+    </ul>
     <EchartsItem type="pie" :data="pieData" />
-    <EchartsItem type="bar" :data="barData" />
-    <EchartsItem type="donut" :data="donutData" />
+    <!-- <EchartsItem type="bar" :data="barData" /> -->
+    <!-- <EchartsItem type="donut" :data="donutData" /> -->
     <EchartsItem type="line" :data="lineData" />
   </div>
 </template>
