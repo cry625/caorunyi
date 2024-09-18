@@ -4,6 +4,7 @@ import SideBar from "@/components/SideBar.vue"
 import { useRouter, useRoute } from "vue-router";
 import { useSysStore } from "@/stores/sys";
 import { ElMessage } from 'element-plus/es';
+
 const router = useRouter()
 const sysStore = useSysStore()
 const headerList = ref([
@@ -17,7 +18,7 @@ const dropdownList = ref([
   { name: 'English', id: 1, icon: 'icon-yingwen' },
 ])
 const colorList = ref([
-  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png' ,package:'src/assets/theme/redSys' },
+  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png',package:'src/assets/theme/redSys' },
   { name: '灰色', id: 1, path: 'public/icon/color_icon/grey.png'},
   { name: '绿色', id: 2, path: 'public/icon/color_icon/green.png' ,package:'src/assets/theme/greenSys'},
   { name: '橙色', id: 3, path: 'public/icon/color_icon/orange.png' },

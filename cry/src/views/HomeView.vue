@@ -1,5 +1,6 @@
 <template>
   <div>
+    <el-button>哈哈哈</el-button>
     <h1>这是一个基于vue+vite+elementPlus的个人网站</h1>
     <ul>以下介绍本网站中使用的技术统计
       <li>简单描述网站内容</li>
