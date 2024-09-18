@@ -16,6 +16,14 @@ const dropdownList = ref([
   { name: '中 文', id: 0, icon: 'icon-zhongwen' },
   { name: 'English', id: 1, icon: 'icon-yingwen' },
 ])
+const colorList = ref([
+  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png' ,package:'src/assets/theme/redSys' },
+  { name: '灰色', id: 1, path: 'public/icon/color_icon/grey.png'},
+  { name: '绿色', id: 2, path: 'public/icon/color_icon/green.png' ,package:'src/assets/theme/greenSys'},
+  { name: '橙色', id: 3, path: 'public/icon/color_icon/orange.png' },
+  { name: '蓝色', id: 4, path: 'public/icon/color_icon/blue.png' },
+  { name: '黑色', id: 5, path: 'public/icon/color_icon/black.png' },
+])
 const showMenu=ref(false)
 const showLight = ref(true)
 const theme = ref('');
@@ -59,13 +67,36 @@ watch(() => showLight.value, changeTheme);
 function goLink(path) {
   router.push({ path: path })
 }
+//修改系统颜色
+function changeSysColor(id){
+  
+}
 </script>
 
 <template>
   <el-container style="height: 100vh;">
     <!-- <SideBar/> -->
     <el-header class="header">
-      <i class="iconfont icon-touxiang"></i>
+
+
+      <!-- <i class="iconfont icon-touxiang"></i> -->
+
+      <el-dropdown>
+            <span class="el-dropdown-link">
+              <div style="color:#ffffff;">修改颜色</div>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.id)">
+                  <template #default>
+                    <div><img :src="item.path"  width="28">{{ item.name }}</div>
+                  </template>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+
+
       <el-form :inline="true" class="mobile-dontShow">
         <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)">
         </el-form-item>
