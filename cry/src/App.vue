@@ -18,9 +18,9 @@ const dropdownList = ref([
   { name: 'English', id: 1, icon: 'icon-yingwen' },
 ])
 const colorList = ref([
-  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png',package:'src/assets/theme/redSys' },
+  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png'},
   { name: '灰色', id: 1, path: 'public/icon/color_icon/grey.png'},
-  { name: '绿色', id: 2, path: 'public/icon/color_icon/green.png' ,package:'src/assets/theme/greenSys'},
+  { name: '绿色', id: 2, path: 'public/icon/color_icon/green.png' },
   { name: '橙色', id: 3, path: 'public/icon/color_icon/orange.png' },
   { name: '蓝色', id: 4, path: 'public/icon/color_icon/blue.png' },
   { name: '黑色', id: 5, path: 'public/icon/color_icon/black.png' },
