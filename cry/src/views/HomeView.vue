@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-button>哈哈哈</el-button>
+    <el-button @click="count++">count is: {{ count }}</el-button>
+    <el-button type="primary" @click="count++">count is: {{ count }}</el-button>
+    <el-button type="success" @click="count++">count is: {{ count }}</el-button>
+    <el-button type="warning" @click="count++">count is: {{ count }}</el-button>
+    <el-button type="danger" @click="count++">count is: {{ count }}</el-button>
+    <el-button type="info" @click="count++">count is: {{ count }}</el-button>
     <h1>这是一个基于vue+vite+elementPlus的个人网站</h1>
     <ul>以下介绍本网站中使用的技术统计
       <li>简单描述网站内容</li>
@@ -17,7 +22,7 @@
 <script setup>
 import EchartsItem from '@/components/EchartsItem.vue';
 import { ref } from 'vue';
-
+const count=ref(0)
 // 数据
 const pieData = ref([
   { value: 335, name: '直接访问' },

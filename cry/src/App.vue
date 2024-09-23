@@ -4,6 +4,7 @@ import SideBar from "@/components/SideBar.vue"
 import { useRouter, useRoute } from "vue-router";
 import { useSysStore } from "@/stores/sys";
 import { ElMessage } from 'element-plus/es';
+import { toggleDark } from "@/composables";
 
 const router = useRouter()
 const sysStore = useSysStore()
@@ -18,14 +19,14 @@ const dropdownList = ref([
   { name: 'English', id: 1, icon: 'icon-yingwen' },
 ])
 const colorList = ref([
-  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png'},
-  { name: '灰色', id: 1, path: 'public/icon/color_icon/grey.png'},
+  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png' },
+  { name: '灰色', id: 1, path: 'public/icon/color_icon/grey.png' },
   { name: '绿色', id: 2, path: 'public/icon/color_icon/green.png' },
   { name: '橙色', id: 3, path: 'public/icon/color_icon/orange.png' },
   { name: '蓝色', id: 4, path: 'public/icon/color_icon/blue.png' },
   { name: '黑色', id: 5, path: 'public/icon/color_icon/black.png' },
 ])
-const showMenu=ref(false)
+const showMenu = ref(false)
 const showLight = ref(true)
 const theme = ref('');
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -69,8 +70,8 @@ function goLink(path) {
   router.push({ path: path })
 }
 //修改系统颜色
-function changeSysColor(id){
-  
+function changeSysColor(id) {
+
 }
 </script>
 
@@ -79,23 +80,24 @@ function changeSysColor(id){
     <!-- <SideBar/> -->
     <el-header class="header">
 
-
       <!-- <i class="iconfont icon-touxiang"></i> -->
 
       <el-dropdown>
-            <span class="el-dropdown-link">
-              <div style="color:#ffffff;">修改颜色</div>
-            </span>
-            <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.id)">
-                  <template #default>
-                    <div><img :src="item.path"  width="28">{{ item.name }}</div>
-                  </template>
-                </el-dropdown-item>
-              </el-dropdown-menu>
-            </template>
-          </el-dropdown>
+        <span class="el-dropdown-link">
+          <div style="color:#ffffff;">修改颜色</div>
+        </span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.id)">
+              <template #default>
+                <div><img :src="item.path" width="28">{{ item.name }}</div>
+              </template>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+
+          <el-button type="info" @click="toggleDark()">测试两色替换 </el-button>
 
 
       <el-form :inline="true" class="mobile-dontShow">
@@ -143,7 +145,8 @@ function changeSysColor(id){
 .tool-bar {
   display: flex;
 }
-.mr-right{
+
+.mr-right {
   margin: auto 0.8rem auto 0;
   line-height: 1;
 }

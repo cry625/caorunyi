@@ -16,7 +16,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@use "@/assets/theme/red.scss" as *;@import "@/assets/theme.css";@import "@/assets/base.css";@import "@/assets/elementPlus-custom.css";',
+        additionalData: '@import "@/styles/element/index.scss";@import "@/assets/theme.css";@import "@/assets/base.css";@import "@/assets/elementPlus-custom.css";',
       }
     }
   }
