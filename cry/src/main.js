@@ -1,9 +1,6 @@
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import ElementPlus from 'element-plus'
 import piniaPersist from 'pinia-plugin-persist'
-import 'element-plus/dist/index.css'
 import '@/assets/font/iconfont.css'
 import '@/assets/theme.css' 
 import '@/assets/base.css' 
@@ -22,7 +19,5 @@ const pinia = createPinia()
 pinia.use(piniaPersist)
 app.use(pinia)
 app.use(router)
-app.use(ElementPlus)
 
 app.mount('#app')
-

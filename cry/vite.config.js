@@ -32,7 +32,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/styles/element/index.scss";@import "@/assets/theme.css";@import "@/assets/base.css";@import "@/assets/elementPlus-custom.css";',
+        additionalData: '@use "@/styles/element/index.scss" as *;@import "@/assets/theme.css";@import "@/assets/base.css";@import "@/assets/elementPlus-custom.css";',
       }
     }
   }
