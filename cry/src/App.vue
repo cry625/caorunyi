@@ -110,7 +110,7 @@ function setHtmlClass(className) {
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.value)">
+            <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.value)" value="item.value">
               <template #default>
                 <div><img :src="item.path" width="28">{{ item.name }}</div>
               </template>
@@ -118,9 +118,6 @@ function setHtmlClass(className) {
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-
-      <el-button type="info" @click="toggleDark()">测试两色替换 </el-button>
-
 
       <el-form :inline="true" class="mobile-dontShow">
         <el-form-item :label="item.name" v-for="(item, key) in headerList" :key="key" @click="goLink(item.path)">

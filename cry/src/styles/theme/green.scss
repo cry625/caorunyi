@@ -19,7 +19,7 @@ $colors: () !default;
 
 $colors: map.merge($colors, (
     "primary": (
-        "base": blue, // 修改 primary 的 base 颜色
+        "base": rgb(19, 191, 85), // 修改 primary 的 base 颜色
     ),
 ));
 
@@ -64,7 +64,7 @@ $bg-color: map.merge(
   (
     'page': #8a4a4a,
     '': #fa6666,
-    'overlay': #fff,
+    'overlay': #b94857,
   ),
   $bg-color
 );
@@ -227,7 +227,7 @@ $empty: map.merge(
 );
 
 // @debug $colors;
-html.blue {
+html.green {
 //   color-scheme: light;
 
   // hex colors

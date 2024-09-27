@@ -19,7 +19,7 @@ $colors: () !default;
 
 $colors: map.merge($colors, (
     "primary": (
-        "base": #d31346, // 修改 primary 的 base 颜色
+        "base": rgb(255, 17, 0), // 修改 primary 的 base 颜色
     ),
 ));
 
