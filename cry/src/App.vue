@@ -19,12 +19,11 @@ const dropdownList = ref([
   { name: 'English', id: 1, icon: 'icon-yingwen' },
 ])
 const colorList = ref([
-  { name: '红色', id: 0, path: 'public/icon/color_icon/red.png' },
-  { name: '灰色', id: 1, path: 'public/icon/color_icon/grey.png' },
-  { name: '绿色', id: 2, path: 'public/icon/color_icon/green.png' },
-  { name: '橙色', id: 3, path: 'public/icon/color_icon/orange.png' },
-  { name: '蓝色', id: 4, path: 'public/icon/color_icon/blue.png' },
-  { name: '黑色', id: 5, path: 'public/icon/color_icon/black.png' },
+  { name: '绿色', value: 'green', id: 1, path: 'public/icon/color_icon/green.png' },
+  { name: '蓝色', value: 'blue', id: 2, path: 'public/icon/color_icon/blue.png' },
+  { name: '红色', value: 'red', id: 4, path: 'public/icon/color_icon/red.png' },
+  { name: '灰色', value: 'grey', id: 3, path: 'public/icon/color_icon/grey.png' },
+  { name: '黑暗模式', value: 'dark', id: 0, path: 'public/icon/color_icon/black.png' },
 ])
 const showMenu = ref(false)
 const showLight = ref(true)
@@ -69,9 +68,32 @@ watch(() => showLight.value, changeTheme);
 function goLink(path) {
   router.push({ path: path })
 }
-//修改系统颜色
-function changeSysColor(id) {
 
+// 页面加载时设置初始值
+window.onload = function() {
+  const savedClass = localStorage.getItem('htmlClass');
+  if (!savedClass) {
+    document.documentElement.className = 'blue'; // 设置初始值为 'blue'
+    localStorage.setItem('htmlClass', 'blue'); // 存储到 localStorage
+  } else {
+    document.documentElement.className = savedClass; // 使用保存的类
+  }
+};
+
+function changeSysColor(value) {
+  if (value === 'dark') {
+    // 当前为手动黑暗模式
+    toggleDark();
+  } else {
+    // 明亮颜色调整
+      // 设置 <html> 元素的类并存储到 localStorage
+      setHtmlClass(value)
+  }
+}
+// 函数：设置和存储当前类
+function setHtmlClass(className) {
+    document.documentElement.className = className; // 设置 <html> 的类
+    localStorage.setItem('htmlClass', className); // 存储到 localStorage
 }
 </script>
 
@@ -88,7 +110,7 @@ function changeSysColor(id) {
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.id)">
+            <el-dropdown-item v-for="(item, index) in colorList" :key="index" @click="changeSysColor(item.value)">
               <template #default>
                 <div><img :src="item.path" width="28">{{ item.name }}</div>
               </template>
@@ -97,7 +119,7 @@ function changeSysColor(id) {
         </template>
       </el-dropdown>
 
-          <el-button type="info" @click="toggleDark()">测试两色替换 </el-button>
+      <el-button type="info" @click="toggleDark()">测试两色替换 </el-button>
 
 
       <el-form :inline="true" class="mobile-dontShow">
