@@ -18,9 +18,24 @@ $colors: () !default;
 }
 
 $colors: map.merge($colors, (
-    "primary": (
-        "base": blue, // 修改 primary 的 base 颜色
-    ),
+  "primary": (
+    "base": #007bff,  // 蓝色
+  ),
+  "success": (
+    "base": #28a745,  // 深绿色
+  ),
+  "warning": (
+    "base": #ffc107,  // 明亮的橙色
+  ),
+  "danger": (
+    "base": #dc3545,  // 深红色
+  ),
+  "error": (
+    "base": #dc3545,  // 深红色
+  ),
+  "info": (
+    "base": #17a2b8,  // 浅蓝色
+  ),
 ));
 
 // https://sass-lang.com/documentation/values/maps#immutability

@@ -4,7 +4,7 @@ import SideBar from "@/components/SideBar.vue"
 import { useRouter, useRoute } from "vue-router";
 import { useSysStore } from "@/stores/sys";
 import { ElMessage } from 'element-plus/es';
-import { toggleDark } from "@/composables";
+import { isDark, toggleDark } from "@/composables";
 
 const router = useRouter()
 const sysStore = useSysStore()
@@ -81,7 +81,8 @@ window.onload = function() {
 };
 
 function changeSysColor(value) {
-  if (value === 'dark') {
+  if (value == 'dark') {
+    setHtmlClass(value)
     // 当前为手动黑暗模式
     toggleDark();
   } else {
