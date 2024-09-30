@@ -81,6 +81,7 @@ window.onload = function() {
 };
 
 function changeSysColor(value) {
+console.log("value",value)
   if (value == 'dark') {
     setHtmlClass(value)
     // 当前为手动黑暗模式
