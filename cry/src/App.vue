@@ -155,7 +155,7 @@ function setHtmlClass(className) {
         </el-switch>
       </div>
     </el-header>
-    <el-main>
+    <el-main class="main-vue">
       <RouterView />
     </el-main>
   </el-container>
